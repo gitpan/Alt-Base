@@ -2,13 +2,18 @@ NAME
     Alt::Base - Base class for alternate module
 
 VERSION
-    version 0.01
+    version 0.02
 
 SYNOPSIS
      # in your Alt/Foo/Bar/phrase.pm:
      package Alt::Foo::Bar::phrase;
      use base qw(Alt::Base);
-     our %ALT = (check => 0);
+     1;
+
+     # customize options:
+     package Alt::Foo::Bar::phrase;
+     use base qw(Alt::Base);
+     our %ALT = (check => 0, ...);
      1;
 
 DESCRIPTION

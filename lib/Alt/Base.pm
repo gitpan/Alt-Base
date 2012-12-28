@@ -3,7 +3,7 @@ package Alt::Base;
 use strict;
 use warnings;
 
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 sub import {
     my $self = shift;
@@ -50,14 +50,19 @@ Alt::Base - Base class for alternate module
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
  # in your Alt/Foo/Bar/phrase.pm:
  package Alt::Foo::Bar::phrase;
  use base qw(Alt::Base);
- our %ALT = (check => 0);
+ 1;
+
+ # customize options:
+ package Alt::Foo::Bar::phrase;
+ use base qw(Alt::Base);
+ our %ALT = (check => 0, ...);
  1;
 
 =head1 DESCRIPTION
@@ -65,7 +70,7 @@ version 0.01
 The Alt::Base class provides common functionalities for an alternate module. For
 more information about the Alt concept, please refer to L<Alt>.
 
-L<Alt::Base> defines an C<import()> routine which checks for options in C<%ALT>.
+Alt::Base defines an C<import()> routine which checks for options in C<%ALT>.
 These options are:
 
 =over
